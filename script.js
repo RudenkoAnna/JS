@@ -1,5 +1,7 @@
 let numberOne;
 let numberTwo;
+const positive_reply = `yes`;
+const negative_reply = `no`;
 
 numberOne = prompt("Enter first number");
 numberTwo = prompt("Ënter your second number");
@@ -12,5 +14,13 @@ if (numberOne == 0 || numberTwo == 0) {
 }
 alert("Multiplication " + "" + Number(numberOne) * Number(numberTwo));
 alert("Sum " + "" + (Number(numberOne) + Number(numberTwo)));
-
-alert("Substraction " + "" + (Number(numberOne) - Number(numberTwo)));
+if (numberOne < numberTwo) {
+  reply = prompt(
+    "Are you sure, that you want to continue substraction? write yes or no"
+  );
+  if (reply == positive_reply) {
+    alert("Substraction " + "" + (Number(numberOne) - Number(numberTwo)));
+  } else if ((reply = negative_reply)) {
+    alert("Okay, we will skip the substraction");
+  }
+}
