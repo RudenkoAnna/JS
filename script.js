@@ -60,11 +60,14 @@ function myFunction(a, b) {
       substraction +
       ` ` +
       `Division of a and b:` +
-      division
+      division +
+      ` ` +
+      `Multiplication of a and b:` +
+      multiplication
     );
   } else {
     return `One of the entered arguments (or both arguments) are not a number(s)`;
   }
 }
-let result = myFunction(4, 9);
+let result = myFunction(4, 4);
 console.log(result);
