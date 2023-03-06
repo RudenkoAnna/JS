@@ -1,48 +1,3 @@
-const arr = [20, 30, 40, 90, 120, true, false, 11, 189, 1, 18, 31, "word"];
-const numbers = [];
-console.log(arr);
-
-//Displaying of sum (taking into account numbers only)
-let sum = 0;
-for (let i = 0; i < arr.length; i++) {
-  if (typeof arr[i] === "number") {
-    sum = sum + arr[i];
-  }
-}
-console.log(sum);
-
-//Displaying of max values (taking into account numbers only)
-let max = arr[0];
-for (let i = 1; i < 10; ++i) {
-  if (typeof arr[i] === "number") {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-  }
-}
-console.log(max);
-
-//Displaying of min values (taking into account numbers only)
-let min = arr[0];
-for (let i = 1; i < 10; ++i) {
-  if (typeof arr[i] === "number") {
-    if (arr[i] < min) {
-      min = arr[i];
-    }
-  }
-}
-console.log(min);
-
-//Displaying of semi tree
-let depth = 5;
-let char = "#";
-let output = "";
-for (let i = 1; i <= depth; i++) {
-  output += char.repeat(i);
-  output += "\n";
-}
-console.log(output);
-
 //mathematic operations  and checking whether arguments are numbers
 let items = myFunction(2, 4);
 function myFunction(a, b) {
@@ -71,3 +26,60 @@ function myFunction(a, b) {
 }
 let result = myFunction(4, 4);
 console.log(result);
+
+//Searching of min and max values or an array
+//function for finding max number
+
+function getMaxClosure() {
+  let max = -Infinity;
+
+  return function (items) {
+    if (items > max) {
+      max = items;
+    }
+
+    return max;
+  };
+}
+
+function findMaxNumber(items) {
+  const getMax = getMaxClosure();
+
+  for (let i = 1; i < items.length; i++) {
+    getMax(items[i]);
+  }
+
+  return getMax(-Infinity);
+}
+
+///  function for finding min number
+function getMinClosure() {
+  let min = Infinity;
+
+  return function (items) {
+    if (items < min) {
+      min = items;
+    }
+
+    return min;
+  };
+}
+
+function findMinNumber(items) {
+  const getMin = getMinClosure();
+
+  for (let i = 1; i < items.length; i++) {
+    getMin(items[i]);
+  }
+
+  return getMin(Infinity);
+}
+///
+
+const array = [70, 40, 23, 18, 89, 100, 21, 71, 88, 90];
+
+const maxNumber = findMaxNumber(array);
+const minNumber = findMinNumber(array);
+
+console.log(maxNumber);
+console.log(minNumber);
