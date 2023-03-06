@@ -43,24 +43,28 @@ for (let i = 1; i <= depth; i++) {
 }
 console.log(output);
 
-//mathematic operations
+//mathematic operations  and checking whether arguments are numbers
 let items = myFunction(2, 4);
 function myFunction(a, b) {
-  sum = a + b;
-  substraction = a - b;
-  division = a / b;
-  multiplication = a * b;
+  if (typeof a === "number" && typeof b === "number") {
+    sum = a + b;
+    substraction = a - b;
+    division = a / b;
+    multiplication = a * b;
 
-  return (
-    `Sum of a and b:` +
-    sum +
-    ` ` +
-    `Substraction of a and b:` +
-    substraction +
-    ` ` +
-    `Division of a and b:` +
-    division
-  );
+    return (
+      `Sum of a and b:` +
+      sum +
+      ` ` +
+      `Substraction of a and b:` +
+      substraction +
+      ` ` +
+      `Division of a and b:` +
+      division
+    );
+  } else {
+    return `One of the entered arguments (or both arguments) are not a number(s)`;
+  }
 }
-let result = myFunction(4, 8);
+let result = myFunction(4, 9);
 console.log(result);
