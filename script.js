@@ -1,85 +1,25 @@
-//mathematic operations  and checking whether arguments are numbers
-let items = myFunction(2, 4);
-function myFunction(a, b) {
-  if (typeof a === "number" && typeof b === "number") {
-    sum = a + b;
-    substraction = a - b;
-    division = a / b;
-    multiplication = a * b;
-
-    return (
-      `Sum of a and b:` +
-      sum +
-      ` ` +
-      `Substraction of a and b:` +
-      substraction +
-      ` ` +
-      `Division of a and b:` +
-      division +
-      ` ` +
-      `Multiplication of a and b:` +
-      multiplication
-    );
-  } else {
-    return `One of the entered arguments (or both arguments) are not a number(s)`;
-  }
-}
-let result = myFunction(4, 4);
-console.log(result);
-
-//Searching of min and max values or an array
-//function for finding max number
-
-function getMaxClosure() {
-  let max = -Infinity;
-
-  return function (items) {
-    if (items > max) {
-      max = items;
-    }
-
-    return max;
+// creating user object  +  and sayHello reply
+function createUser(name, age) {
+  return {
+    name: name,
+    age: age,
+    getNameAndAge() {
+      return `Привіт, я ${this.name}, мені ${this.age} років`;
+    },
   };
 }
 
-function findMaxNumber(items) {
-  const getMax = getMaxClosure();
-
-  for (let i = 1; i < items.length; i++) {
-    getMax(items[i]);
+const showMessage = function (user) {
+  if (!user) {
+    return;
   }
 
-  return getMax(-Infinity);
-}
+  const userInfo = user.getNameAndAge();
+  console.log(`${userInfo}`);
+};
 
-///  function for finding min number
-function getMinClosure() {
-  let min = Infinity;
+const Anna = createUser("Anna", 30);
+const Brian = createUser("Brian", 29);
 
-  return function (items) {
-    if (items < min) {
-      min = items;
-    }
-
-    return min;
-  };
-}
-
-function findMinNumber(items) {
-  const getMin = getMinClosure();
-
-  for (let i = 1; i < items.length; i++) {
-    getMin(items[i]);
-  }
-
-  return getMin(Infinity);
-}
-///
-
-const array = [70, 40, 23, 18, 89, 100, 21, 71, 88, 90];
-
-const maxNumber = findMaxNumber(array);
-const minNumber = findMinNumber(array);
-
-console.log(maxNumber);
-console.log(minNumber);
+showMessage(Anna);
+showMessage(Brian);
