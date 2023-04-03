@@ -1,3 +1,13 @@
+let numberOne;
+let numberTwo;
+
+numberOne = prompt("Enter first number");
+numberTwo = prompt("Ënter your second number");
+alert("Multiplication " + "" + Number(numberOne) * Number(numberTwo));
+alert("Sum " + "" + (Number(numberOne) + Number(numberTwo)));
+alert("Division " + "" + Number(numberOne) / Number(numberTwo));
+alert("Substraction " + "" + (Number(numberOne) - Number(numberTwo)));
+
 //mathematic operations  and checking whether arguments are numbers
 let items = myFunction(2, 4);
 function myFunction(a, b) {
