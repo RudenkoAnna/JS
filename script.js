@@ -107,16 +107,37 @@ function findMinNumber(items) {
 }
 ///
 
-const array = [70, 40, 23, 18, 89, 100, 21, 71, 88, 90];
+const array = [70, 400, 230, 1800, 89, 8000, 200, 71, 52, 88, 90];
 
 const maxNumber = findMaxNumber(array);
 const minNumber = findMinNumber(array);
 const p7 = document.createElement("p");
+
 p7.textContent = `The maximum number of array will be: ${maxNumber}`;
+if (maxNumber < 0 && maxNumber <= 50) {
+  p7.style.color = "light grey";
+} else if (maxNumber >= 51 && maxNumber <= 1000) {
+  p7.style.color = "grey";
+} else if (maxNumber >= 1000 && maxNumber <= 10000) {
+  p7.style.color = "dark grey";
+} else {
+  p7.style.color = "black";
+  p7.style.fontWeight = "bold";
+}
 container.appendChild(p7);
 
 const p8 = document.createElement("p");
 p8.textContent = `The minimum number of array will be: ${minNumber}`;
+if (minNumber < 0 && minNumber <= 50) {
+  p8.style.color = "black";
+  p8.style.fontWeight = "bold";
+} else if (minNumber >= 51 && minNumber <= 1000) {
+  p8.style.color = "#93a1a3";
+} else if (minNumber >= 1000 && minNumber <= 10000) {
+  p8.style.color = "grey";
+} else {
+  p8.style.color = "#494e4f";
+}
 container.appendChild(p8);
 console.log(maxNumber);
 console.log(minNumber);
