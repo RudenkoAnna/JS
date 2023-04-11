@@ -1,9 +1,3 @@
-const listElement = document.getElementById("mathItems");
-function Calculations() {
-  this.digits = [];
-}
-
-///
 let numberOne = prompt("Enter first number");
 let numberTwo = prompt("Enter your second number");
 
@@ -18,22 +12,22 @@ const container = document.getElementById("resultContainer");
 
 // HTML elements with results
 const p1 = document.createElement("p");
-p1.textContent = `Number One: ${numberOne}`;
+p1.textContent = `You have entered Number One: ${numberOne}`;
 
 const p2 = document.createElement("p");
-p2.textContent = `Number Two: ${numberTwo}`;
+p2.textContent = `You have entered  Number Two: ${numberTwo}`;
 
 const p3 = document.createElement("p");
-p3.textContent = `Sum: ${sum}`;
+p3.textContent = `The Sum of your numbers will be : ${sum}`;
 
 const p4 = document.createElement("p");
-p4.textContent = `Division: ${division}`;
+p4.textContent = `The Division of your numbers will be: ${division}`;
 
 const p5 = document.createElement("p");
-p5.textContent = `Subtraction: ${subtraction}`;
+p5.textContent = `The Subtraction of your numbers will be: ${subtraction}`;
 
 const p6 = document.createElement("p");
-p6.textContent = `Multiplication: ${multiplication}`;
+p6.textContent = `The Multiplication of your numbers will be: ${multiplication}`;
 
 // Append the HTML elements to the container
 container.appendChild(p1);
@@ -97,6 +91,12 @@ const array = [70, 40, 23, 18, 89, 100, 21, 71, 88, 90];
 
 const maxNumber = findMaxNumber(array);
 const minNumber = findMinNumber(array);
+const p7 = document.createElement("p");
+p7.textContent = `The maximum number of array will be: ${maxNumber}`;
+container.appendChild(p7);
 
+const p8 = document.createElement("p");
+p8.textContent = `The minimum number of array will be: ${minNumber}`;
+container.appendChild(p8);
 console.log(maxNumber);
 console.log(minNumber);
