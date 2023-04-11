@@ -19,15 +19,35 @@ p2.textContent = `You have entered  Number Two: ${numberTwo}`;
 
 const p3 = document.createElement("p");
 p3.textContent = `The Sum of your numbers will be : ${sum}`;
+if (sum < 0) {
+  p3.style.color = "red";
+} else {
+  p3.style.color = "green";
+}
 
 const p4 = document.createElement("p");
 p4.textContent = `The Division of your numbers will be: ${division}`;
+if (division < 0) {
+  p4.style.color = "red";
+} else {
+  p4.style.color = "green";
+}
 
 const p5 = document.createElement("p");
 p5.textContent = `The Subtraction of your numbers will be: ${subtraction}`;
+if (subtraction < 0) {
+  p5.style.color = "red";
+} else {
+  p5.style.color = "green";
+}
 
 const p6 = document.createElement("p");
 p6.textContent = `The Multiplication of your numbers will be: ${multiplication}`;
+if (multiplication < 0) {
+  p6.style.color = "red";
+} else {
+  p6.style.color = "green";
+}
 
 // Append the HTML elements to the container
 container.appendChild(p1);
