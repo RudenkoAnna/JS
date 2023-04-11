@@ -3,48 +3,46 @@ function Calculations() {
   this.digits = [];
 }
 
-let numberOne;
-let numberTwo;
+///
+let numberOne = prompt("Enter first number");
+let numberTwo = prompt("Enter your second number");
 
-numberOne = prompt("Enter first number");
-numberTwo = prompt("Ënter your second number");
-alert("Multiplication " + "" + Number(numberOne) * Number(numberTwo));
-alert("Sum " + "" + (Number(numberOne) + Number(numberTwo)));
-alert("Division " + "" + Number(numberOne) / Number(numberTwo));
-alert("Substraction " + "" + (Number(numberOne) - Number(numberTwo)));
+// Perform calculations
+let sum = Number(numberOne) + Number(numberTwo);
+let division = Number(numberOne) / Number(numberTwo);
+let subtraction = Number(numberOne) - Number(numberTwo);
+let multiplication = Number(numberOne) * Number(numberTwo);
 
-//mathematic operations  and checking whether arguments are numbers
-let items = myFunction(2, 4);
-function myFunction(a, b) {
-  if (typeof a === "number" && typeof b === "number") {
-    sum = a + b;
-    substraction = a - b;
-    division = a / b;
-    multiplication = a * b;
+// container with results
+const container = document.getElementById("resultContainer");
 
-    return (
-      `Sum of a and b:` +
-      sum +
-      ` ` +
-      `Substraction of a and b:` +
-      substraction +
-      ` ` +
-      `Division of a and b:` +
-      division +
-      ` ` +
-      `Multiplication of a and b:` +
-      multiplication
-    );
-    const li = document.createElement("li");
-    li.setAttribute("id", `mathItems-${i}`);
-    li.textContent = this.digits;
-    listElement.appendChild(li);
-  } else {
-    return `One of the entered arguments (or both arguments) are not a number(s)`;
-  }
-}
-let result = myFunction(4, 4);
-console.log(result);
+// HTML elements with results
+const p1 = document.createElement("p");
+p1.textContent = `Number One: ${numberOne}`;
+
+const p2 = document.createElement("p");
+p2.textContent = `Number Two: ${numberTwo}`;
+
+const p3 = document.createElement("p");
+p3.textContent = `Sum: ${sum}`;
+
+const p4 = document.createElement("p");
+p4.textContent = `Division: ${division}`;
+
+const p5 = document.createElement("p");
+p5.textContent = `Subtraction: ${subtraction}`;
+
+const p6 = document.createElement("p");
+p6.textContent = `Multiplication: ${multiplication}`;
+
+// Append the HTML elements to the container
+container.appendChild(p1);
+container.appendChild(p2);
+container.appendChild(p3);
+container.appendChild(p4);
+container.appendChild(p5);
+container.appendChild(p6);
+/////
 
 //Searching of min and max values or an array
 //function for finding max number
