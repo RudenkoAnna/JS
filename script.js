@@ -1,3 +1,8 @@
+const listElement = document.getElementById("mathItems");
+function Calculations() {
+  this.digits = [];
+}
+
 let numberOne;
 let numberTwo;
 
@@ -30,6 +35,10 @@ function myFunction(a, b) {
       `Multiplication of a and b:` +
       multiplication
     );
+    const li = document.createElement("li");
+    li.setAttribute("id", `mathItems-${i}`);
+    li.textContent = this.digits;
+    listElement.appendChild(li);
   } else {
     return `One of the entered arguments (or both arguments) are not a number(s)`;
   }
