@@ -14,7 +14,6 @@ function startTimer(id, deadline) {
     var clock = document.getElementById(id); //getting the match id from the DOM.
     var timer = updateTimer(deadline); // generating a function and injecting it a deadline.
 
-    // ref to the HTML with div clock - concat the series of spans
     clock.innerHTML =
       "<span>" +
       timer.days +
@@ -29,9 +28,7 @@ function startTimer(id, deadline) {
       timer.seconds +
       "</span>";
 
-    // Check for the end of timer.
     if (timer.total < 1) {
-      //means the difference
       clearInterval(timerInterval);
       clock.innerHTML =
         "<span>0</span><span>0</span><span>0</span><span>0</span>";
@@ -39,8 +36,8 @@ function startTimer(id, deadline) {
   }, 1000);
 }
 
-// when the window loads fire this function.
-window.onload = function () {
+window.onload = function (event) {
+  event.preventDefault();
   var deadline = new Date("January 1, 2024 23:59:59"); // Declare a deadline.
   startTimer("clock", deadline); // we're going to inject into the clock id of the html the deadline.
 };
