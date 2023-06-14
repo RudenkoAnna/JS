@@ -1,3 +1,66 @@
-.negative {
-  color: red;
+body {
+  background: #dadee4;
+  font-family: Tahoma;
+}
+
+h1 {
+  color: #0f1550;
+  text-align: center;
+  font-size: 74px;
+  letter-spacing: 10px;
+}
+
+#del-countdown {
+  width: 850px;
+  margin: 15% auto;
+}
+
+#clock span {
+  float: left;
+  text-align: center;
+  font-size: 84px;
+  margin: 0 2.5%;
+  color: #fff;
+  padding: 20px;
+  width: 20%;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+#clock span:nth-child(1) {
+  background: hwb(177 21% 15%);
+}
+
+#clock span:nth-child(2) {
+  background: #2e6da4;
+}
+
+#clock span:nth-child(3) {
+  background: #f6bc58;
+}
+
+#clock span:nth-child(4) {
+  background: hwb(177 21% 15%);
+}
+
+#clock:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#units span {
+  float: left;
+  width: 25%;
+  text-align: center;
+  margin-top: 30px;
+  color: #0c0641;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 1px 1px rgba(10, 10, 10, 0.7);
+}
+
+span.turn {
+  animation: turn 0.5s ease forwards;
 }

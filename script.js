@@ -1,45 +1,46 @@
-// 1
-
-function calculateAverage(arr) {
-  let sum = 0;
-  /// changed <= to <
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
-  }
-
-  let avg = sum / arr.length;
-  /// added return
-  return avg;
-}
-
-let numbers = [1, 2, 3, 4, 5];
-
-let avg = calculateAverage(numbers);
-console.log("The average is: " + avg); // має бути 3
-// 2
-debugger;
-function User(name, age) {
-  this.name = name;
-  this.age = age;
-}
-
-User.prototype.sayHello = function () {
-  //added ${this. }
-  return `Hi. My name is ${this.name} and I'm ${this.age} years old`;
-};
-
-const user = new User("Sherlock", 27);
-// Added () at the sayHello
-console.log(user.sayHello()); // має вивести "Hi. My name is Sherlock and I'm 27 years old"
-
-// 3
-
-const calculator = function (init = 0) {
-  return function () {
-    return init++;
+function updateTimer(deadline) {
+  var time = deadline - new Date();
+  return {
+    days: Math.floor(time / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((time / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((time / 1000 / 60) % 60),
+    seconds: Math.floor((time / 1000) % 60),
+    total: time,
   };
+}
+
+function startTimer(id, deadline) {
+  var timerInterval = setInterval(function () {
+    var clock = document.getElementById(id); //getting the match id from the DOM.
+    var timer = updateTimer(deadline); // generating a function and injecting it a deadline.
+
+    // ref to the HTML with div clock - concat the series of spans
+    clock.innerHTML =
+      "<span>" +
+      timer.days +
+      "</span>" +
+      "<span>" +
+      timer.hours +
+      "</span>" +
+      "<span>" +
+      timer.minutes +
+      "</span>" +
+      "<span>" +
+      timer.seconds +
+      "</span>";
+
+    // Check for the end of timer.
+    if (timer.total < 1) {
+      //means the difference
+      clearInterval(timerInterval);
+      clock.innerHTML =
+        "<span>0</span><span>0</span><span>0</span><span>0</span>";
+    }
+  }, 1000);
+}
+
+// when the window loads fire this function.
+window.onload = function () {
+  var deadline = new Date("January 1, 2024 23:59:59"); // Declare a deadline.
+  startTimer("clock", deadline); // we're going to inject into the clock id of the html the deadline.
 };
-// mooved part of code  below the function
-const c = calculator();
-console.log(c()); // має вивести 1
-console.log(c()); // має вивести 2
